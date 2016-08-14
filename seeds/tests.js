@@ -11,7 +11,8 @@ exports.seed = function(knex, Promise) {
             username: 'The_Murray69',
             avatar_url: 'http://fillmurray.com/200/200',
             about_me: 'Remember those movies I starred in? Yeah, me too.',
-            location: 'Los Angeles, CA'
+            location: 'Los Angeles, CA',
+            password:'$2a$04$SO0jxz3ZK7GsNd5nrQG96uGUEHZmguRI1OFEbExWTcmGo4lzdzjki'
           }),
         knex('users')
           .insert({
@@ -19,7 +20,8 @@ exports.seed = function(knex, Promise) {
             username: 'RageInTheCage',
             avatar_url: 'http://placecage.com/c/200/200',
             about_me: 'I really need money. Please buy my houses.',
-            location: 'Everywhere'
+            location: 'Everywhere',
+            password:'$2a$04$SO0jxz3ZK7GsNd5nrQG96uGUEHZmguRI1OFEbExWTcmGo4lzdzjki'
           }),
         knex('users')
           .insert({
@@ -27,7 +29,8 @@ exports.seed = function(knex, Promise) {
             username: 'Samurai_Master_420',
             avatar_url: 'http://stevensegallery.com/200/200',
             about_me: 'Nothing personel kid heh',
-            location: 'Los Angeles, CA'
+            location: 'Los Angeles, CA',
+            password:'$2a$04$SO0jxz3ZK7GsNd5nrQG96uGUEHZmguRI1OFEbExWTcmGo4lzdzjki'
           }),
         knex('users')
           .insert({
@@ -36,7 +39,8 @@ exports.seed = function(knex, Promise) {
             avatar_url: 'http://placecage.com/200/200',
             about_me: 'I\'m only here to round out the numbers.',
             location: 'Austin, TX',
-            admin:true
+            admin:true,
+            password:'$2a$04$SO0jxz3ZK7GsNd5nrQG96uGUEHZmguRI1OFEbExWTcmGo4lzdzjki'
           })
       ]);
     }).then(function() {

@@ -14,6 +14,9 @@ router.route('/users')
         users = users.toJSON();
         res.json(users);
       });
+  })
+  .post((req, res) => {
+    // Create new user.
   });
 
 router.route('/users/:user_id')
@@ -22,6 +25,9 @@ router.route('/users/:user_id')
       .then( user => {
         user = user.toJSON();
         res.json(user);
-      })
+      });
+  })
+  .put((req, res) => {
+    // Edit user.
   })
 module.exports = router;
