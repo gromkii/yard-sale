@@ -1,1 +1,18 @@
 <h2>{{index.greeting}}</h2>
+
+<section class="row">
+  <div ng-repeat="item in index.items.data" class="col s3">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{item.item_img}}">
+      </div>
+      <h3 class="card-title">{{item.item_name}}</h3>
+      <h6>Sold by: {{item.user.username}}</h6>
+      <p class="card-content">{{item.item_desc}}</p>
+
+      <div class="card-action right-align">
+        <a href="#" class="btn pink">Contact</a>
+        <a href="#" class="btn cyan">Buy</a>
+    </div>
+  </div>
+</section>

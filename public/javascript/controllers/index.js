@@ -1,13 +1,34 @@
 (function(){
   angular
     .module('indexController',[])
+    .config(router)
     .controller('IndexController', IndexController)
 
-  IndexController.$inject = [];
+  router.$inject = ['$routeProvider', '$locationProvider'];
+  IndexController.$inject = ['Items'];
 
-  function IndexController(){
+  function router($routeProvider, $locationProvider){
+    $routeProvider
+      .when('/', {
+        templateUrl:'views/index/main.html',
+        controller:'IndexController',
+        controllerAs:'index'
+      })
+
+    $locationProvider.html5Mode({
+      enabled:true,
+      requireBase:false
+    });
+  }
+
+  function IndexController(Items){
     var store = this;
-
     store.greeting = 'Testing.';
+
+    Items.getListings().then(items => {
+      console.log(items.data);
+      store.items = items;
+    })
+
   }
 })()
