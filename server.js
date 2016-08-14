@@ -5,7 +5,10 @@ var express = require('express'),
     api = require('./routes/api');
 
 // -- Middleware -- //
-
+app.use(bodyParser.urlencoded({extended:false}))
+  .use(bodyParser.json())
+  .use(methodOverride('_method'))
+  .use(express.static('public'));
 
 // -- Routes -- //
 app.use('/api/v1/', api);
