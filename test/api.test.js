@@ -4,7 +4,7 @@ var expect  = require('chai').expect,
     knex    = require('../db/knex'),
     should  = require('should');
 
-describe('Test API Routes', () => {
+describe('User Routes', () => {
   describe('/api/v1/', () => {
     it('Should return connect confirmation.', done => {
       request
@@ -13,7 +13,7 @@ describe('Test API Routes', () => {
         .end((err, res) => {
           expect(res.body).to.eq('Hello.');
           done();
-        })
+        });
     });
     it('Should return something.', done => {
       request
@@ -22,7 +22,34 @@ describe('Test API Routes', () => {
         .end((err, res) => {
           should.exist(res.body);
           done();
-        })
-    })
+        });
+    });
   });
+
+  describe('/api/v1/users', () => {
+    it('Should return list of all users.', done => {
+      request
+        .get('/api/v1/users')
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.length).to.eq(4);
+          done();
+        });
+    });
+    it('Should return correct properties.', done => {
+      request
+        .get('/api/v1/users')
+        .expect(200)
+        .end((err, res) => {
+          let users = res.body;
+          (users[0]).should.have.property('full_name', 'Fill Murray');
+          (users[0]).should.have.property('username', 'The_Murray69');
+          (users[0]).should.have.property('location', 'Los Angeles, CA');
+        });
+    });
+  })
+});
+
+describe('Listing Routes', () => {
+  
 });
