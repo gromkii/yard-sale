@@ -3,14 +3,20 @@
     .module('Items', [])
     .factory('Items', Items)
 
-  Items.$inject = [];
+  Items.$inject = ['$http']
 
-  function Items(){
-    $http({
-      method:'GET',
-      url:'/api/v1/listings'
-    }).then( results => {
-      return results;
-    });
+  function Items($http){
+    var ItemMethods = {
+      getListings:getListings
+    };
+
+    return ItemMethods;
+
+    function getListings(){
+      return $http({
+        url:'/api/v1/listings',
+        method:'GET'
+      });
+    }
   }
 })()

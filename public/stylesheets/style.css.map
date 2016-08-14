@@ -1,7 +1,12 @@
 {
 "version": 3,
+<<<<<<< HEAD
 "mappings": "",
 "sources": [],
+=======
+"mappings": "AAAA,QAAS;EACP,mBAAmB,EAAC,MAAM;EAC1B,eAAe,EAAC,KAAK",
+"sources": ["style.scss"],
+>>>>>>> 727779c5ed7b3e9c494e9bb0ae22c89cd3ca1846
 "names": [],
 "file": "style.css"
 }

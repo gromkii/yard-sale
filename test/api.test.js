@@ -108,7 +108,7 @@ describe('Listing Routes', () => {
       .expect(200)
       .end((err, res) => {
         var items = res.body;
-        expect(items.length).to.eq(3);
+        expect(items.length).to.eq(6);
         done();
       });
   });

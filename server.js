@@ -2,7 +2,8 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
-    api = require('./routes/api');
+    api = require('./routes/api'),
+    auth = require('./routes/auth');
 
 // -- Middleware -- //
 app.use(bodyParser.urlencoded({extended:false}))
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 // -- Routes -- //
 app.use('/api/v1/', api);
+app.use('/auth', auth);
 
 app.get('*', (req, res) => {
   res.sendFile(__dirname + '/public/views/index.html')

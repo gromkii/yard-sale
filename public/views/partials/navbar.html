@@ -2,8 +2,52 @@
   <div class="nav-wrapper cyan">
     <a href="/" class="brand-logo">Yard Sale</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="views/login.html">Login</a></li>
-      <li><a href="views/signup.html">Sign Up</a></li>
+      <li><a href="#login" modal>Login</a></li>
+      <li><a class='button' href="#registration" modal>Sign Up</a></li>
     </ul>
   </div>
 </nav>
+
+
+<!-- Login Modal -->
+<div class="modal" id="login">
+  <div class="modal-content">
+    <h3 class="thin cyan-text center-align">Login Form</h3>
+      <label for="username">Username</label>
+      <input placeholder="Username" name="username" type="text" class="validate">
+
+      <label for="password">Password</label>
+      <input placeholder="Password" name="password" type="password" class="validate">
+  </div>
+
+  <div class="modal-footer">
+    <a href="/" class="modal-action modal-close cyan waves-effect btn">Login</a>
+    <a href="/" class="modal-action modal-close pink-text waves-effect btn-flat">Cancel</a>
+  </div>
+</div>
+
+<!-- Registration Modal -->
+<div class="modal" id="registration">
+  <div class="modal-content">
+    <h3 clss="thin cyan-text center-align">Signup Form</h3>
+    <label for="full_name">Full Name</label>
+    <input placeholder="Full Name" name="full_name" type="text" class="validate">
+
+    <label for="username">Username</label>
+    <input placeholder="Username" name="username" type="text" class="validate">
+
+    <label for="password">Password</label>
+    <input placeholder="Password" name="password" type="password" class="validate">
+
+    <label for="location">Location</label>
+    <input placeholder="Location" name="location" type="text" class="validate">
+
+    <label for="about_me">About me</label>
+    <textarea name="about_me" class="materialize-textarea"></textarea>
+  </div>
+
+  <div class="modal-footer">
+    <a href="/" class=" modal-action modal-close waves-effect cyan btn">Agree</a>
+    <a href="/" class="modal-action modal-close waves-effect pink-text btn-flat">Cancel</a>
+  </div>
+</div>
