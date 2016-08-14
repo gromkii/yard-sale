@@ -15,11 +15,13 @@ var User = bookshelf.Model.extend({
 
 User.getAllUsers = getAllUsers;
 User.getUser = getUser;
+User.getUserListings = getUserListings;
+User.getUserMessages = getUserMessages;
 
 function getAllUsers(){
   return new Promise((resolve, reject) => {
     User
-      .fetchAll()
+      .fetchAll({withRelated:['listing','message']})
       .then( results => {
         resolve(results);
       });
@@ -31,6 +33,28 @@ function getUser(user_id){
     User
       .where('id', user_id)
       .fetch()
+      .then( results => {
+        resolve(results);
+      });
+  });
+}
+
+function getUserListings(user_id){
+  return new Promise((resolve, reject) => {
+    User
+      .where('id', user_id)
+      .fetch({withRelated:['listing']})
+      .then( results => {
+        resolve(results);
+      });
+  });
+}
+
+function getUserMessages(user_id){
+  return new Promise((resolve, reject) => {
+    User
+      .where('id', user_id)
+      .fetch({withRelated:['message']})
       .then( results => {
         resolve(results);
       });

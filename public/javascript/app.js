@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('yardSale', ['ngRoute','indexController'])
+    .module('yardSale', ['ngRoute','indexController','navbar'])
     .config(router)
 
   router.$inject = ['$routeProvider', '$locationProvider'];
