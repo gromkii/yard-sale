@@ -2,16 +2,30 @@
   <div class="nav-wrapper cyan">
     <a href="/" class="brand-logo">Yard Sale</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="views/login.html">Login</a></li>
-      <li><a href="#registration" modal>Sign Up</a></li>
+      <li><a href="#login" modal>Login</a></li>
+      <li><a class='button' href="#registration" modal>Sign Up</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- Registration Modal -->
 <div class="modal" id="registration">
-  <h1>Hi.</h1>
+  <div class="modal-content valign">
+    <h1>Hi.</h1>
+  </div>
+
   <div class="modal-footer">
     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+<div class="modal" id="login">
+  <div class="modal-content">
+    <h1>Login Form</h1>
+  </div>
+
+  <div class="modal-footer">
+    <a href="/" class="modal-action modal-close waves-pink waves-effect btn-flat">Cancel</a>
+    <a href="/" class="modal-action modal-close waves-cyan waves-effect btn">Login</a>
   </div>
 </div>
