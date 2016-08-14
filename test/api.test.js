@@ -62,6 +62,7 @@ describe('User Routes', () => {
           (users[0]).should.have.property('full_name', 'Fill Murray');
           (users[0]).should.have.property('username', 'The_Murray69');
           (users[0]).should.have.property('location', 'Los Angeles, CA');
+          done();
         });
     });
   })
