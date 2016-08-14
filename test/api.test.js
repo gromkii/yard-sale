@@ -7,20 +7,20 @@ var expect  = require('chai').expect,
 describe('User Routes', () => {
   before( done => {
     knex.migrate.latest()
-      .then( () => {
+      .then(() => {
         knex.seed.run()
-          .then( () => {
+          .then(() => {
             done();
-          });
-      });
+          })
+      })
   });
 
   after( done => {
-    knex.migate.rollback()
-      .then( () => {
+    knex.migrate.rollback()
+      .then(() => {
         done();
-      })
-  })
+      });
+  });
 
   describe('/api/v1/', () => {
     it('Should return connect confirmation.', done => {
