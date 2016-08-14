@@ -77,23 +77,23 @@ exports.seed = function(knex, Promise) {
                 item_name: 'Skateboard',
                 item_desc: 'Needs a bit of tape, but it\'s fine otherwise.',
                 price:69.00,
-                item_img:'https://farm4.staticflickr.com/3660/3802881377_a9768deb6e.jpg'
+                item_img:'https://farm4.staticflickr.com/3385/3503673760_8041d4d72a.jpg'
               }),
             knex('listings')
               .insert({
-                user_id: 3,
-                item_name: 'A Diamond Katana',
-                item_desc: 'I\'ve killed countless men with this sword, and now you can too.',
-                price:69.00,
-                item_img:'https://farm4.staticflickr.com/3435/3193384875_c80fbd3d9c.jpg'
+                user_id: 1,
+                item_name: 'Not Cursed Mask',
+                item_desc: 'It\'s not even cursed, so don\'t bother asking.',
+                price:1.40,
+                item_img:'https://farm4.staticflickr.com/3938/15619697971_e477f4ecc9.jpg'
               }),
             knex('listings')
               .insert({
-                user_id: 3,
-                item_name: 'A Diamond Katana',
-                item_desc: 'I\'ve killed countless men with this sword, and now you can too.',
-                price:69.00,
-                item_img:'https://farm4.staticflickr.com/3435/3193384875_c80fbd3d9c.jpg'
+                user_id: 4,
+                item_name: 'Butt Statue',
+                item_desc: 'Modeled off my actual butt. A good butt, indeed.',
+                price:299.49,
+                item_img:'https://farm1.staticflickr.com/165/344411017_3c79f9de68.jpg'
               })
           ])
         });

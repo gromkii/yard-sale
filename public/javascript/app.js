@@ -1,4 +1,4 @@
 (function(){
   angular
-    .module('yardSale', ['ngRoute','Items','indexController','navbar','ui.materialize'])
+    .module('yardSale', ['ui.router','ngRoute','Items','indexController','navbar','ui.materialize'])
 })();
