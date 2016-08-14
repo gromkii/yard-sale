@@ -1,5 +1,6 @@
 var express = require('express'),
-  router = express.Router();
+  router = express.Router(),
+  User = require('../models/user');
 
 router.route('/')
   .get((req, res) => {
@@ -8,6 +9,10 @@ router.route('/')
 
 router.route('/users')
   .get((req, res) => {
-    res.json(['hey','what','is','up'])
-  })
+    User.getAllUsers()
+      .then( users => {
+        users = users.toJSON();
+        res.json(users);
+      });
+  });
 module.exports = router;

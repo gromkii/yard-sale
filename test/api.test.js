@@ -5,6 +5,23 @@ var expect  = require('chai').expect,
     should  = require('should');
 
 describe('User Routes', () => {
+  before( done => {
+    knex.migrate.latest()
+      .then( () => {
+        knex.seed.run()
+          .then( () => {
+            done();
+          });
+      });
+  });
+
+  after( done => {
+    knex.migate.rollback()
+      .then( () => {
+        done();
+      })
+  })
+
   describe('/api/v1/', () => {
     it('Should return connect confirmation.', done => {
       request
@@ -51,5 +68,5 @@ describe('User Routes', () => {
 });
 
 describe('Listing Routes', () => {
-  
+
 });
