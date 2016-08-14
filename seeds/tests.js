@@ -71,6 +71,30 @@ exports.seed = function(knex, Promise) {
                 price:69.00,
                 item_img:'https://farm4.staticflickr.com/3435/3193384875_c80fbd3d9c.jpg'
               }),
+            knex('listings')
+              .insert({
+                user_id: 4,
+                item_name: 'Skateboard',
+                item_desc: 'Needs a bit of tape, but it\'s fine otherwise.',
+                price:69.00,
+                item_img:'https://farm4.staticflickr.com/3660/3802881377_a9768deb6e.jpg'
+              }),
+            knex('listings')
+              .insert({
+                user_id: 3,
+                item_name: 'A Diamond Katana',
+                item_desc: 'I\'ve killed countless men with this sword, and now you can too.',
+                price:69.00,
+                item_img:'https://farm4.staticflickr.com/3435/3193384875_c80fbd3d9c.jpg'
+              }),
+            knex('listings')
+              .insert({
+                user_id: 3,
+                item_name: 'A Diamond Katana',
+                item_desc: 'I\'ve killed countless men with this sword, and now you can too.',
+                price:69.00,
+                item_img:'https://farm4.staticflickr.com/3435/3193384875_c80fbd3d9c.jpg'
+              })
           ])
         });
     }).then(function() {

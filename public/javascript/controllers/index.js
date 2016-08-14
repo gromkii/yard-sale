@@ -27,7 +27,7 @@
 
     Items.getListings().then(items => {
       console.log(items.data);
-      store.items = items;
+      store.items = items.data;
     })
 
   }
