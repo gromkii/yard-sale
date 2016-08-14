@@ -17,6 +17,9 @@ router.route('/users')
   })
   .post((req, res) => {
     // Create new user.
+  })
+  .delete((req, res) => {
+    // Delete user.
   });
 
 router.route('/users/:user_id')
@@ -29,5 +32,5 @@ router.route('/users/:user_id')
   })
   .put((req, res) => {
     // Edit user.
-  })
+  });
 module.exports = router;
