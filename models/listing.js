@@ -9,4 +9,16 @@ var Listing = bookshelf.Model.extend({
   }
 });
 
+Listing.getAllListings = getAllListings;
+
+function getAllListings(){
+  return new Promise((resolve, reject) => {
+    Listing
+      .fetchAll({withRelated:['user']})
+      .then( results => {
+        resolve(results);
+      });
+  })
+}
+
 module.exports = bookshelf.model('Listing', Listing);

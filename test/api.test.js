@@ -85,4 +85,31 @@ describe('User Routes', () => {
 
 describe('Listing Routes', () => {
 
+  before( done => {
+    knex.migrate.latest()
+      .then(() => {
+        knex.seed.run()
+          .then(() => {
+            done();
+          })
+      })
+  });
+
+  after( done => {
+    knex.migrate.rollback()
+      .then(() => {
+        done();
+      });
+  });
+
+  it('/api/v1/listings', done => {
+    request
+      .get('/api/v1/listings')
+      .expect(200)
+      .end((err, res) => {
+        var items = res.body;
+        expect(items.length).to.eq(3);
+        done();
+      });
+  });
 });

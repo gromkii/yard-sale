@@ -21,7 +21,7 @@ User.getUserMessages = getUserMessages;
 function getAllUsers(){
   return new Promise((resolve, reject) => {
     User
-      .fetchAll({withRelated:['listing','message']})
+      .fetchAll({withRelated:['listing']})
       .then( results => {
         resolve(results);
       });

@@ -1,6 +1,7 @@
 var express = require('express'),
   router = express.Router(), //mergeParams : true for later.
-  User = require('../models/user');
+  User = require('../models/user'),
+  Listing = require('../models/listing');
 
 
 router.route('/')
@@ -40,6 +41,7 @@ router.route('/users/:user_id/listings')
     Use.getUserListings(req.params.user_id)
       .then( user => {
         user = user.toJSON();
+        res.json(user);
       });
   });
 
@@ -48,7 +50,17 @@ router.route('/users/:user_id/messages')
     Use.getUserMessages(req.params.user_id)
       .then( user => {
         user = user.toJSON();
+        res.json(user);
       });
   });
+
+router.route('/listings')
+  .get((req, res) => {
+    Listing.getAllListings()
+      .then( listings => {
+        listings = listings.toJSON();
+        res.json(listings);
+      })
+  })
 
 module.exports = router;
