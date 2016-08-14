@@ -2,13 +2,13 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('messages', table => {
     table.increments(),
-    table.integer('user_id')
+    table.integer('from_id')
       .references('id')
       .inTable('users')
       .onDelete('cascade'),
-    table.integer('listing_id')
+    table.integer('to_id')
       .references('id')
-      .inTable('listings')
+      .inTable('users')
       .onDelete('cascade'),
     table.string('msg_title'),
     table.text('msg_body'),
