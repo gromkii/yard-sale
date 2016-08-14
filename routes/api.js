@@ -15,4 +15,13 @@ router.route('/users')
         res.json(users);
       });
   });
+
+router.route('/users/:user_id')
+  .get((req, res) => {
+    User.getUser(req.params.user_id)
+      .then( user => {
+        user = user.toJSON();
+        res.json(user);
+      })
+  })
 module.exports = router;
