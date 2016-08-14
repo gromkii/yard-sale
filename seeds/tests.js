@@ -28,6 +28,15 @@ exports.seed = function(knex, Promise) {
             avatar_url: 'http://stevensegallery.com/200/200',
             about_me: 'Nothing personel kid heh',
             location: 'Los Angeles, CA'
+          }),
+        knex('users')
+          .insert({
+            full_name: 'Dax Richardson',
+            username: 'gromkii',
+            avatar_url: 'http://placecage.com/200/200',
+            about_me: 'I\'m only here to round out the numbers.',
+            location: 'Austin, TX',
+            admin:true
           })
       ]);
     }).then(function() {
