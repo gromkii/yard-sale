@@ -40,7 +40,7 @@ exports.seed = function(knex, Promise) {
                 item_name: 'A shoe',
                 item_desc: 'I wore this shoe once, so it\'s really valueable.',
                 price:599.99,
-                item_img:''
+                item_img:'https://farm4.staticflickr.com/3135/2979707434_845893af8d.jpg'
               }),
             knex('listings')
               .insert({
@@ -48,7 +48,7 @@ exports.seed = function(knex, Promise) {
                 item_name: 'Summer Home #7',
                 item_desc: 'Please I really need the money. Please buy this house.',
                 price:900.01,
-                item_img:''
+                item_img:'https://farm4.staticflickr.com/3195/3043137274_7bbe765043.jpg'
               }),
             knex('listings')
               .insert({
@@ -56,7 +56,7 @@ exports.seed = function(knex, Promise) {
                 item_name: 'A Diamond Katana',
                 item_desc: 'I\'ve killed countless men with this sword, and now you can too.',
                 price:69.00,
-                item_img:''
+                item_img:'https://farm4.staticflickr.com/3435/3193384875_c80fbd3d9c.jpg'
               }),
           ])
         });
