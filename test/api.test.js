@@ -66,6 +66,21 @@ describe('User Routes', () => {
         });
     });
   })
+
+  describe('/api/v1/users/:user_id', () => {
+    it('Should return user with ID of 1.', done => {
+      request
+        .get('/api/v1/users/1')
+        .expect(200)
+        .end((err, res) => {
+          let user = res.body;
+          (user).should.have.property('full_name', 'Fill Murray');
+          (user).should.have.property('username', 'The_Murray69');
+          (user).should.have.property('location', 'Los Angeles, CA');
+          done();
+        });
+    });
+  })
 });
 
 describe('Listing Routes', () => {
