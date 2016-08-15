@@ -7,8 +7,18 @@
         <img src="{{item.item_img}}">
       </div>
       <h3 class="card-title">{{item.item_name}}</h3>
-      <h6>Sold by: {{item.user.username}}</h6>
+      <h6>Sold by: <a ng-href="#{{item.user.id}}" modal class="pink-text">{{item.user.username}}</a></h6>
       <p class="card-content">{{item.item_desc}}</p>
+
+      <!-- User Info Modal -->
+      <div class="modal row" id="{{item.user.id}}">
+        <div class="col s6">
+          <h3 class="cyan-text center-align">{{item.user.username}}</h3>
+        </div>
+        <div class="col s6">
+          <img ng-src="{{item.user.avatar_url}}">
+        </div>
+      </div>
 
       <div class="card-action right-align">
         <a href="#" class="btn pink">Contact</a>
