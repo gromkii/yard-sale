@@ -3,6 +3,8 @@
     .module('auth', [])
     .factory('Authorization', Authorization)
 
+  login.$inject = ['$http']
+
   function Authorization(){
     var authMethods = {
       login:login,
@@ -10,8 +12,17 @@
       logout:logout
     };
 
-    function login(){
-
+    function login($http, user, pass){
+      $http({
+        method:'POST',
+        URL:'http://localhost:3000/auth/login',
+        data:{
+          username:user,
+          password:pass
+        }
+      }).then( results => {
+        console.log('Login');
+      })
     }
 
     function sessionMake(session_id, user_id, admin){
