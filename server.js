@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({extended:false}))
   .use(express.static('public'));
 
 // -- Routes -- //
+
+// api/v1/users
+// api/v1/listings
+// api/v1/messages
 app.use('/api/v1/', api);
 app.use('/auth', auth);
 
