@@ -13,9 +13,6 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 // -- Routes -- //
 
-// api/v1/users
-// api/v1/listings
-// api/v1/messages
 app.use('/api/v1/', api);
 app.use('/auth', auth);
 
